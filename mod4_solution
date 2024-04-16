@@ -1,1 +1,30 @@
+// Library 1: jQuery
+(function (window) {
+  var helloSpeaker = {};
+  var speakWord = "Hello";
+  helloSpeaker.speak = function (name) {
+    console.log(speakWord + " " + name);
+  };
+  window.helloSpeaker = helloSpeaker;
+})(window);
+
+// Library 2: lodash
+var byeSpeaker = {};
+var speakWord = "Goodbye";
+byeSpeaker.speak = function (name) {
+  console.log(speakWord + " " + name);
+};
+
+// Main code
+var names = ["John", "Jane", "Joe", "Jill", "Jack", "Alice", "Bob"];
+
+names.forEach(function (name) {
+  if (name.charAt(0).toLowerCase() === "j") {
+    // Using jQuery library
+    helloSpeaker.speak(name);
+  } else {
+    // Using lodash library
+    byeSpeaker.speak(name);
+  }
+});
 
